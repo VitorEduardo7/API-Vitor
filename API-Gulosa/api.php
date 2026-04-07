@@ -1,9 +1,19 @@
 <?php
     header("Content-type: application/json");
 
-    $usuarios = [
-        ["id" => 1, "nome" => "Maria Souza", "email" => "maria@gmail.com"],
-        ['id' => 2, "nome" => "João Silva", "email" => "joao@email.com"]
-        ];
+    $metodo = $_SERVER['REQUEST_METHOD'];
 
-        echo json_encode($usuarios);
+    // echo "Metódo da requisição: " .$metodo;
+
+
+    switch ($metodo) {
+    case 'GET':
+    echo "AQUI AÇÕES DO MÉTODO GET";
+    break;
+    case 'POST':
+    echo "AQUI AÇÕES DO MÉTODO POST";
+    break;
+    default:
+    echo "MÉTODO NÃO ENCONTRADO!";
+    break;
+    }
